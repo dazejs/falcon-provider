@@ -1,0 +1,61 @@
+{
+  "name": "@dazejs/falcon-provider",
+  "version": "0.1.0",
+  "description": "falcon sdk",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env DAZE_ENV=dev DEBUG=dubbo-provider:* nodemon --signal SIGTERM --exec ts-node src/index.ts --source-map --preserve-symlinks",
+    "build": "npm run clear && tsc",
+    "clear": "rimraf dist/*",
+    "watch": "tsc -w",
+    "prod": "cross-env DAZE_ENV=prod node dist/index.js",
+    "test": "jest --verbose --runInBand --forceExit",
+    "test:coverage": "jest --runInBand --forceExit --coverage",
+    "example": "cross-env DAZE_ENV=prod DEBUG=websocket-provider:* nodemon --signal SIGTERM --exec ts-node example/index.ts --source-map --preserve-symlinks",
+    "commitlint": "commitlint -e $GIT_PARAMS",
+    "prepublish": "npm run build"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazejs/falcon-provider.git"
+  },
+  "author": "chanzewail@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dazejs/falcon-provider/issues"
+  },
+  "homepage": "https://github.com/dazejs/falcon-provider#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10.15.0"
+  },
+  "peerDependencies": {
+    "@dazejs/framework": ">=2.5.3",
+    "reflect-metadata": ">=0.1.12"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@dazejs/framework": "2.5.3",
+    "@types/jest": "25.1.4",
+    "@types/node": "13.9.0",
+    "@typescript-eslint/eslint-plugin": "2.22.0",
+    "@typescript-eslint/parser": "2.22.0",
+    "commitlint": "8.3.5",
+    "cross-env": "7.0.2",
+    "eslint": "6.8.0",
+    "husky": "4.2.3",
+    "jest": "25.1.0",
+    "nodemon": "2.0.2",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "socket.io-client": "2.3.0",
+    "ts-jest": "25.2.1",
+    "ts-node": "8.6.2",
+    "typescript": "3.8.3"
+  }
+}
