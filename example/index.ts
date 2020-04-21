@@ -1,5 +1,7 @@
 import { Application } from '@dazejs/framework';
 
-const app = new Application(__dirname);
+const app = new Application(__dirname, {
+  view: './views'
+});
 
-app.run(9192);
+app.run(9122);
